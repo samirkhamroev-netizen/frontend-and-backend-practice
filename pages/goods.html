@@ -4,35 +4,44 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Товары - Семестровая работа</title>
+        <link rel="stylesheet" href="../style/styles.css">
     </head>
     <body>
-        <div id="header">Хэдер</div>
-        <div id="menu">
-            <ul>
-                <li><a href="../index.html">Главная</a></li>
-                <li><a href="news.html">Новости</a></li>
-                <li><a href="practices.html">Практики</a></li>
-                <li><a href="goods.html">Товары</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
+        <div class="page-container">
+            <div class="header">Хэдер</div>
+            <div class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                    <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h1 class="page-title">Каталог товаров</h1>
+                <div class="goods-container">
+                    <div class="goods-card">
+                        <img class="goods-image" src="../images/goods1.jpg" alt="Товар 1">
+                        <h3 class="goods-title">Товар 1</h3>
+                        <p class="goods-price">1 990 руб.</p>
+                        <button class="goods-button">Купить</button>
+                    </div>
+                    <div class="goods-card">
+                        <img class="goods-image" src="../images/goods2.jpg" alt="Товар 2">
+                        <h3 class="goods-title">Товар 2</h3>
+                        <p class="goods-price">2 990 руб.</p>
+                        <button class="goods-button">Купить</button>
+                    </div>
+                    <div class="goods-card">
+                        <img class="goods-image" src="../images/goods3.jpg" alt="Товар 3">
+                        <h3 class="goods-title">Товар 3</h3>
+                        <p class="goods-price">3 990 руб.</p>
+                        <button class="goods-button">Купить</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">Футер</div>
         </div>
-        <div id="content">
-            <div>
-                <img src="photo2.webp" alt="Товар 1" width="200" height="200">
-                <h3>Товар 1 - ROBLOX</h3>
-                <p>Цена: 1.000.000 robuxes</p>
-            </div>
-            <div>
-                <img src="photo3.webp" alt="Товар 2" width="200" height="200">
-                <h3>Товар 2 - MINECRAFT</h3>
-                <p>Цена: 3.000.000.000 diamonds</p>
-            </div>
-            <div>
-                <img src="photo4.webp" alt="Товар 3" width="200" height="200">
-                <h3>Товар 3 - STANDOFF 2</h3>
-                <p>Цена: ∞ </p>
-            </div>
-        </div>
-        <div id="footer">Футер</div>
     </body>
 </html>

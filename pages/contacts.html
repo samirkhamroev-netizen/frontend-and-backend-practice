@@ -4,23 +4,37 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Контакты - Семестровая работа</title>
+        <link rel="stylesheet" href="../style/styles.css">
     </head>
     <body>
-        <div id="header">Хэдер</div>
-        <div id="menu">
-            <ul>
-                <li><a href="../index.html">Главная</a></li>
-                <li><a href="news.html">Новости</a></li>
-                <li><a href="practices.html">Практики</a></li>
-                <li><a href="goods.html">Товары</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
+        <div class="page-container">
+            <div class="header">Хэдер</div>
+            <div class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                    <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h1 class="page-title">Контактная информация</h1>
+                <div class="contacts-container">
+                    <div class="contact-card">
+                        <h3 class="contact-title">Электронная почта</h3>
+                        <p class="contact-info">ваш-email@example.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3 class="contact-title">Адрес</h3>
+                        <p class="contact-info">г. Москва, ул. Примерная, д. 1</p>
+                    </div>
+                    <div class="contact-card">
+                        <button class="contact-button">Позвоните мне</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">Футер</div>
         </div>
-        <div id="content">
-            <p>samirhamroev@mail.ru</p>
-            <p>Адрес: Бейкер-стрит, 221b, Лондон</p>
-            <button>номер: 888005553535</button>
-        </div>
-        <div id="footer">Футер</div>
     </body>
 </html>
