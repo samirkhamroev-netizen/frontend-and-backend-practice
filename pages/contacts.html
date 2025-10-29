@@ -3,38 +3,155 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Контакты - Семестровая работа</title>
-        <link rel="stylesheet" href="../style/styles.css">
+        <title>Контакты - Хамрокулов Самир</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div class="page-container">
-            <div class="header">Хэдер</div>
-            <div class="nav">
+            <header class="header">
+                <h1>Контакты</h1>
+            </header>
+
+            <nav class="nav">
                 <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
                     <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
                     <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
                     <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
                 </ul>
-            </div>
-            <div class="content">
-                <h1 class="page-title">Контактная информация</h1>
-                <div class="contacts-container">
-                    <div class="contact-card">
-                        <h3 class="contact-title">Электронная почта</h3>
-                        <p class="contact-info">samirhamroev@mail.ru</p>
+            </nav>
+
+            <main class="content">
+                <section class="contacts-container">
+                    <h2 class="section-title">Наши контакты</h2>
+
+                    <article class="contact-info">
+                        <h3>Электронная почта</h3>
+                        <p>samirhamroev@mail.ru</p>
+                    </article>
+
+                    <article class="contact-info">
+                        <h3>Адрес</h3>
+                        <p>Бейкер-стрит, 221b</p>
+                    </article>
+
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <h3>Телефон</h3>
+                            <p>888005553535</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Время работы</h3>
+                            <p>Пн-Пт: 9:00-18:00</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Социальные сети</h3>
+                            <p>VK, Telegram, WhatsApp</p>
+                        </div>
                     </div>
-                    <div class="contact-card">
-                        <h3 class="contact-title">Адрес</h3>
-                        <p class="contact-info">Бейкер-стрит, 221b</p>
-                    </div>
-                    <div class="contact-card">
-                        <button class="contact-button">Позвоните мне - 888005553535</button>
-                    </div>
+
+                    <button class="contact-button" onclick="contactModal.showModal()">
+                        Связаться с нами
+                    </button>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <p>© 2025 Хамрокулов Самир Сухробович</p>
+            </footer>
+
+            <!-- Модальное окно для формы обратной связи -->
+            <dialog id="contactModal">
+                <div class="modal-header">
+                    <h2>Форма обратной связи</h2>
+                    <button onclick="contactModal.close()" class="close-btn">×</button>
                 </div>
-            </div>
-            <div class="footer">Футер</div>
+
+                <div class="modal-content">
+                    <form id="feedbackForm" method="dialog">
+                        <div class="form-group">
+                            <label for="name">Имя <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Телефон <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Электронная почта <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Категория обращения <span class="required">*</span></label>
+                            <select id="category" name="category" required>
+                                <option value="">Выберите категорию</option>
+                                <option value="technical">Техническая поддержка</option>
+                                <option value="commercial">Коммерческое предложение</option>
+                                <option value="cooperation">Сотрудничество</option>
+                                <option value="complaint">Жалоба</option>
+                                <option value="suggestion">Предложение</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Текст обращения <span class="required">*</span></label>
+                            <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button type="submit" class="btn btn-secondary">Отмена</button>
+                            <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+
+            <script>
+                // Функция для отправки формы
+                function submitForm() {
+                    const form = document.getElementById('feedbackForm');
+                    const formData = new FormData(form);
+
+                    // Простая валидация
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
+
+                    // Собираем данные формы
+                    const data = {
+                        name: formData.get('name'),
+                        phone: formData.get('phone'),
+                        email: formData.get('email'),
+                        category: formData.get('category'),
+                        message: formData.get('message')
+                    };
+
+                    // В реальном приложении здесь был бы AJAX-запрос
+                    console.log('Данные формы:', data);
+
+                    // Показываем уведомление об успешной отправке
+                    alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+
+                    // Закрываем модальное окно
+                    contactModal.close();
+
+                    // Очищаем форму
+                    form.reset();
+                }
+
+                // Закрытие модального окна по клику на фон
+                document.getElementById('contactModal').addEventListener('click', function(event) {
+                    if (event.target === this) {
+                        this.close();
+                    }
+                });
+            </script>
         </div>
     </body>
 </html>
